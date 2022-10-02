@@ -1,6 +1,7 @@
 import { isValidObjectId, Model } from 'mongoose';
 import { ErrorTypes } from '../errors/catalog';
 import { IModel } from '../interfaces/IModel';
+import hash from 'bcryptjs';
 
 abstract class MongoModel<T> implements IModel<T> {
   protected _model:Model<T>;
