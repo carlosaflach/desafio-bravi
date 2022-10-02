@@ -12,5 +12,7 @@ const userController = new UserController(userService);
 userRouter.post('/', userController.create);
 userRouter.get('/', userController.read);
 userRouter.get('/:id', userController.readOne);
+userRouter.put('/:id', userController.update);
+userRouter.delete('/:id', userController.delete);
 
 export default userRouter;
