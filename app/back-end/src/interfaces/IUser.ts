@@ -8,7 +8,7 @@ const UserZodSchema = z.object({
   celNumber: z.number().min(11),
   address: z.string().min(4),
   password: z.string().min(7),
-});
+},);
 
 type IUser = z.infer<typeof UserZodSchema>
 

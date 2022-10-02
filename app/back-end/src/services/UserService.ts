@@ -11,6 +11,9 @@ class UserService implements IService<IUser> {
   }
 
   public async create(obj: IUser):Promise<IUser> {
+    const user = this._userModel.findOne(obj.email) as unknown;
+    if(user) throw new Error(ErrorTypes.AlreadyRegistered);
+
     const parsed = UserZodSchema.safeParse(obj);
 
     if(!parsed.success) {

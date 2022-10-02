@@ -10,7 +10,7 @@ const userMongooseSchema = new Schema<IUser>({
   celNumber: Number,
   address: String,
   password: String,
-});
+}, { versionKey: false });
 
 class UserModel extends MongoModel<IUser> {
   constructor(model = mongooseCreateModel('User', userMongooseSchema)) {
