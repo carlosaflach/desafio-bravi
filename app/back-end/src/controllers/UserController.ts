@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import IService from '../interfaces/IService';
 import { IUser } from '../interfaces/IUser';
-import hash from 'bcryptjs';
 
 export default class UserController {
   constructor(private _service: IService<IUser>) {}
@@ -15,4 +14,17 @@ export default class UserController {
 
     return res.status(201).json(serviceResponse);
   };
+
+  public read = async (req: Request, res: Response<IUser[]>) => {
+    const users = await this._service.read();
+    return res.status(200).json(users);
+  }
+
+  public readOne = async (req: Request, res: Response<IUser>) => {
+    const { id } = req.params;
+
+    const user = await this._service.readOne(id);
+
+    return res.status(200).json(user);
+  }
 }

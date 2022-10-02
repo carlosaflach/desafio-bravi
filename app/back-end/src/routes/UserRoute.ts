@@ -10,5 +10,7 @@ const userService = new UserService(userModel);
 const userController = new UserController(userService);
 
 userRouter.post('/', userController.create);
+userRouter.get('/', userController.read);
+userRouter.get('/:id', userController.readOne);
 
 export default userRouter;
