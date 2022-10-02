@@ -1,7 +1,10 @@
 export enum ErrorTypes {
   EntityNotFound = 'EntityNotFound',
   InvalidMongoId = 'InvalidMongoId',
-  AlreadyRegistered = 'AlreadyRegistered'
+  AlreadyRegistered = 'AlreadyRegistered',
+  UserInvalid = 'UserInvalid',
+  EmailRequired = 'EmailRequired',
+  PasswordRequired = 'PasswordRequired'
 }
 
 // esse é o tipo do objeto vai ser usado construir a resposta da API
@@ -30,5 +33,18 @@ export const errorCatalog: ErrorCatalog = {
   AlreadyRegistered: {
     error: 'User already registered',
     httpStatus: 409
+  },
+  UserInvalid: {
+    error: 'Username or password invalid',
+    httpStatus: 401
+  },
+  EmailRequired: {
+    error: 'Email is required',
+    httpStatus: 400,
+  },
+  PasswordRequired: {
+    error: 'Password is required',
+    httpStatus: 400,
   }
+
 };
