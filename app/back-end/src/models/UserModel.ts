@@ -6,7 +6,7 @@ const userMongooseSchema = new Schema<IUser>({
   name: String,
   age: Number,
   email: String,
-  telefoneNumber: Number,
+  phoneNumber: Number,
   celNumber: Number,
   address: String,
   password: String,
