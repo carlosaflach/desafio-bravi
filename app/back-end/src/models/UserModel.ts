@@ -6,10 +6,9 @@ const userMongooseSchema = new Schema<IUser>({
   name: String,
   age: Number,
   email: String,
-  phoneNumber: Number,
-  celNumber: Number,
+  phoneNumber: String,
+  celNumber: String,
   address: String,
-  password: { String, select: false}
 }, { versionKey: false });
 
 class UserModel extends MongoModel<IUser> {
