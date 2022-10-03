@@ -4,7 +4,7 @@
 
 1. Faça o download do repositório, via SSH ou outro método.
    
-2. O Diretório irá conter 2 pastas:
+2. O Diretório irá conter duas pastas:
    1. O Diretório 01_Logica apresenta o teste para verificar se os suportes estão balanceados.
    2. O Diretório app, apresenta a aplicação CRUD desenvolvida em React, Node, Express e TypeScript.
 
