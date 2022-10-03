@@ -6,14 +6,8 @@ import ReadUsersTable from "../Components/ReadUsersTable";
 import IUser from "../interface/IUser";
 import {
   Table,
-  Thead,
   Tbody,
-  Tr,
-  Th,
-  Td,
   TableContainer,
-  Button,
-  Input,
 } from "@chakra-ui/react";
 import EditUsersTable from "../Components/EditUsersTable";
 

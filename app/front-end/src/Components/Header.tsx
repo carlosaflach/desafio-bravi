@@ -1,6 +1,6 @@
 import { Button } from "@chakra-ui/react";
 import { useNavigate } from "react-router";
-import { getLocalToken, Local, logout } from "../Services/handleLocalStorage";
+import { getLocalToken, logout } from "../Services/handleLocalStorage";
 
 export default function Header() {
   const navigate = useNavigate();

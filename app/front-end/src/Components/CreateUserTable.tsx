@@ -46,7 +46,7 @@ const CreateUserTable = (props:Props) => {
 
   const handleClick = async () => {
     try {
-      const data = await axios.post('http://localhost:3001/users', {
+       await axios.post('http://localhost:3001/users', {
         name, age, email, phoneNumber: phone, celNumber: cel, address
       });
       props.getData();

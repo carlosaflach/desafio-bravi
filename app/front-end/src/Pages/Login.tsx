@@ -3,7 +3,6 @@ import {
   Button, Input, InputGroup, InputRightElement,
 } from '@chakra-ui/react';
 
-import axios from 'axios';
 import createToken from '../Services/generateToken';
 import { setLocalStorage } from '../Services/handleLocalStorage';
 import { Navigate, useNavigate } from 'react-router-dom';
@@ -13,8 +12,6 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [enableButton, setEnableButton] = useState(false);
   const [isLogged, setIsLogged] = useState(false);
-  const [err, setErr] = useState('')
-  const [failedTryLogin, setFailedTryLogin] = useState(false);
   const [show, setShow] = useState(false);
   const [isAuth, setIsAuth] = useState(false);
   const handleClick = () => setShow(!show);
@@ -28,7 +25,6 @@ export default function Login() {
     const passValid = password.length >= passMinLength;
     const isValid = mailValidator && passValid;
     setEnableButton(isValid);
-    setFailedTryLogin(false);
     setIsAuth(false);
   }, [email, password]);
 
@@ -88,13 +84,6 @@ export default function Login() {
           >
             Login
           </Button>
-          { failedTryLogin ? (
-            <p
-              data-testid="common_login__element-invalid-email"
-            >
-              {err}
-            </p>
-          ) : null}
           <Button
             colorScheme="green"
             size="md"
